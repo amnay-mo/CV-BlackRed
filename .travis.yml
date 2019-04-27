@@ -3,7 +3,7 @@ services:
 install:
 - docker pull amnay/xelatex:latest
 script:
-- docker run --rm -v $PWD:/data make 
+- docker run --rm -v $PWD:/data amnay/xelatex:latest make 
 deploy:
   provider: releases
   skip_cleanup: true
