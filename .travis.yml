@@ -1,0 +1,14 @@
+services:
+- docker
+install:
+- docker pull amnay/xelatex:latest
+script:
+- docker run --rm -v $PWD:/data make 
+deploy:
+  provider: releases
+  skip_cleanup: true
+  api_key:
+    secure: xznsl4OOAIttZE2lltih5ilULC80OQ/0rtCjK1DmfcmdUbqaOB47NqZ26g47qIzntOtZmV/JUcs6QgVOAGb2nVW/nPotxPedpAAoGfqwbOCeT6xDlrz0Etzst/Dzcw/7zBgm4yk1wrvU472QgMZyODGj+RxzwXbcD5mgA+iWWC625sqBdoQt0EuxvHUdAZGwBJIMoYDMiJvZ00qRTiYVc25V8ST5HO1NlpIMFOpH65cCpnnSN3PHhsFrMWyWbGu9U46QWsWbsP5N73B1GuntcyANvamwzA7PoqZ8t7p77oRUaq3wLJuYOoFL3vNpFI9UBYbkKjC0Zu/OiknqKok3dTo4VjfMd5LRpgtpS1GEP1KKhcZJN0E6F+BUvdOYUxkd+JOJts6/Guy7ZzPfoV2lbra3AbVcbP/bizVOb9zbEWhzXsdk1uFKVT4qSM8mTYf1NG24/FfTU1+CTYYqqZj3q3/gYwRV6eOm7aGAtBwH+vLgx5EH+Hqm1eRBotlKBLz20M8aVgnNjXFnlBAHUbUF42lNYAmjq76J9+fOPxkRdGs6hU4DG9qWVJU6Cmi/yQpjg3dPngAX3SXKwzdE+eVvT5qFU1Sf9Lj15kW4F+LWhrUjbRZ1KV3Ynp0UBbneFgooDGigd90TOpqH2D7+A0VeuW9gUVJTuAsV8RVPc64Q6is=
+  file: resume_cv.pdf
+  on:
+    tags: true
